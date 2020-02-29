@@ -4,30 +4,17 @@ function mostrar()
 	
 	var random;
 
-	random = Math.floor(Math.random() * 11);
-console.log(random);
+	random= (Math.floor(Math.random() * 10)+1);
+	
+	console.log(random);
 
-
-	if (random>8) {
+	if ( random > 8){
 		alert("Excelente");
-	}
-	if (random<5) {
-		alert("Vamos la próxima se puede");
-	}
-	if (4<random && random<9) {
-		alert("Aprobó")
+		}else if (random <4) {
+			alert ("Vamos, la próxima se puede");
 		}
-
-		/*
-		if (random>8) {
-			alert("Excelente");
-		}
-		if (random<5) {
-			alert("Vamos la próxima se puede");
-		}
-		else{
-			alert("Aprobó")
+			else {
+				alert("Aprobado");
 			}
-		*/
 
 }//FIN DE LA FUNCIÓN

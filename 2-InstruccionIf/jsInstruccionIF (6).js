@@ -1,29 +1,21 @@
 function mostrar()
 {
 //tomo la edad  
+    var edad;
 
-var edad;
+    edad=parseInt(document.getElementById("edad").value);
 
-//Obtenemos edad y la parseamos
-edad = parseInt(document.getElementById("edad").value);
-
-//Evaluacion condicional
-if (edad >= 18)
-    {
-        alert("Adulto");
+    if ( edad > 17){
+        alert("Es mayor de edad")
     }
-else
-{
-    if (edad >= 13)
-    {
-        alert("Adolescente");
-
-    }
-    else{
-        alert("Niño");
-    
+        else if ( edad < 18 && edad > 12)
+        {
+           alert("Es adolescente"); 
+        }
+        else {
+            alert("Es niño o niña");
         }
 
-}
+
 
 }//FIN DE LA FUNCIÓN
