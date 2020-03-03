@@ -5,11 +5,13 @@ function mostrar()
     var temperatura;
     var marcaMasPesado;
     var respuesta="si";
-    var temperaturasPares;
-    var cantidadBajoCero;
+    var temperaturasPares=0;
+    var cantidadBajoCero=0;
     var promedioPesoTotal;
     var pesoMaximo;
     var pesoMinimo;
+    var acumuladorPeso=0;
+    var contadorPeso=0;
 
 
     while (respuesta=="si"){
@@ -17,27 +19,47 @@ function mostrar()
         marca=prompt("Ingrese la marca del producto");
         console.log(marca)
 
-        peso=prompt("Ingrese el peso (entre 1 y 100)");
-        peso=parseInt(peso);
+        peso=parseInt(prompt("Ingrese el peso (entre 1 y 100)"));
+        while (isNaN(peso) || peso<1 || peso>100){
+        peso=parseInt(prompt("Error: reingrese el peso (entre 1 y 100)"));
+        }
+
+        if(contadorPeso==0 || peso>pesoMaximo){
+        marcaMasPesado=marca;
+        pesoMaximo=peso;
+        } 
+        
+        if(contadorPeso==0 || pesoMinimo>peso){
+        pesoMinimo=peso;
+        } 
+        acumuladorPeso=acumuladorPeso+peso;
+        contadorPeso++;
+
         console.log(peso)
 
-        while (isNaN(peso) || peso<1 || peso>100){
-        peso=prompt("Error: reingrese el peso (entre 1 y 100)");
-        peso=parseInt(peso);
-
-        }
-
-        temperatura=prompt("Ingrese la temperatura");
-        temperatura=parseInt(temperatura);
-        console.log(temperatura)
-
+        temperatura=parseInt(prompt("Ingrese la temperatura entre -30 y 30"));
         while(isNaN(temperatura) || temperatura>30 || temperatura<-30){
-        temperatura=prompt("Error: reingrese temperatura entre -30 y 30")
-        
+        temperatura=parseInt(prompt("Error: reingrese temperatura entre -30 y 30"));
         }
+        
+        if (0==temperatura % 2){
+            temperaturasPares++;
+        }
+        if (temperatura<0){
+            cantidadBajoCero++;
+        }
+        console.log(temperatura)
+       
+        
 
         respuesta= prompt ("Si desea continuar ingrese 'si'");
     }
+
+    
+    if (contadorPeso != 0){
+    promedioPesoTotal= acumuladorPeso/contadorPeso;
+    }
+
     document.write("-La cantidad de temperaturas pares es: " + temperaturasPares + "<br>"+
                 "-La marca del producto más pesado es: " + marcaMasPesado + "<br>"+
                 "-La cantidad de productos a menos de cero grados: " + cantidadBajoCero  + "<br>"+
@@ -46,6 +68,7 @@ function mostrar()
     )
 
 
+}
 
 
     /*
@@ -65,4 +88,4 @@ function mostrar()
 
     }
 */
-}
+
