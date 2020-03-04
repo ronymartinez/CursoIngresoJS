@@ -29,7 +29,7 @@ function mostrar()
         pesoMaximo=peso;
         } 
         
-        if(contadorPeso==0 || pesoMinimo>peso){
+        if(contadorPeso==0 || peso<pesoMinimo){
         pesoMinimo=peso;
         } 
         acumuladorPeso=acumuladorPeso+peso;

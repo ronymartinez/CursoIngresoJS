@@ -1,10 +1,11 @@
 function mostrar()
-{
+{ //ERROR EN LOS MAXIMOS Y MINIMOS
     var letra;
     var numero;
     var pares=0;
     var impares=0;
     var ceros=0;
+    var contador=0;
     var contadorPositivos=0;
     var acumuladorPositivos=0;
     var promedioPositivos;
@@ -41,8 +42,18 @@ function mostrar()
             pares++
         } else {impares++}
 
-      console.log(numero);
+        if( contador==0 || numeroMaximo<numero){
+            numeroMaximo=numero;
+            letraNumeroMaximo=letra;
+        }
 
+        if ( contador==0 || numeroMinimo>numero){
+            numeroMinimo=numero;
+            letraNumeroMinimo=letra;
+        }
+
+      console.log(numero);
+contador++;
 respuesta= prompt("Ingrese 'si' para continuar");
 }
 
