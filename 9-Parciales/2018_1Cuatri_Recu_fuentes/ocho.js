@@ -1,5 +1,5 @@
 function mostrar()
-{ //ERROR EN LOS MAXIMOS Y MINIMOS
+{ 
     var letra;
     var numero;
     var pares=0;
